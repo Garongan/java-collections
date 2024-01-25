@@ -13,8 +13,30 @@ public class ExampleIterator {
 //        java 8 kebawah -> Arrays.asList();
         Iterable<String> names = new ArrayList<>(Arrays.asList("Cahyo", "Theo", "Rahman", "Alvindo", "Dzaki"));
 
+//        lihat data cara lama
         Iterator<String> iterator = names.iterator();
 
-        System.out.println(iterator.next());
+//        while (iterator.hasNext()) {
+//            System.out.println(iterator.next());
+//        }
+
+        System.out.println("===hasil lihat cara baru===");
+
+//        lihat data cara baru
+        for (String name : names) {
+            System.out.println(name);
+        }
+
+        System.out.println("=======remove=========");
+//        hapus data cara lama
+        while (iterator.hasNext()) {
+            if (iterator.next().equals("Alvindo")) iterator.remove();
+        }
+
+        for (String name : names) {
+            System.out.println(name);
+        }
+
+        System.out.println(names.spliterator());
     }
 }
